@@ -1,0 +1,173 @@
+body {
+    background-image: url(bg-intro-mobile.png);
+    background-color: hsl(0, 100%, 74%);
+    background-repeat: no-repeat;
+    background-size: 100% 100% ;
+    background-position: center;
+    font-family: 'poppins';
+}
+
+.container {
+    text-align: center;
+}
+
+.one {
+    color: white;
+    margin: 100 auto;
+    font-size: 16px;
+}
+
+h1 {
+    color: white;
+    line-height: 1.1;
+    font-size: 2.2em;
+}
+
+p {
+    
+    line-height: 1.5;
+}
+
+button {
+    
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.firstbut {
+    width: 585px;
+    height: 80px;
+    background-color: hsl(248, 32%, 49%);
+    margin-bottom: 3%;
+}
+
+form {
+    width: 585px;
+    margin: 0 auto;
+    
+}
+
+fieldset {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    height: auto;
+}
+
+.inpcont {
+    position: relative;
+}
+
+input {
+    width: 90%;
+    height: 50px;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 14px;
+    font-weight:600;
+}
+
+.firstinp {
+    margin-top: 20px;
+}
+
+.secondbut {
+    width: 90%;
+    height: 50px;
+    background-color: hsl(154, 59%, 51%);
+    margin: 10px auto;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+small {
+    color: hsl(246, 25%, 77%);
+    
+}
+
+a {
+    color: hsl(0, 100%, 74%);
+    text-decoration: none;
+}
+
+
+.error{
+    display: none;
+    position: absolute;
+    left: 495px;
+}
+
+.explain {
+    display: none;
+    margin-left: 320px;
+    font-size: 12px;
+    color: hsl(0, 100%, 74%);
+}
+
+#firstname {
+    top: 32px;
+}
+
+#lastname {
+    top: 25px;
+}
+
+#email {
+    top: 25px;
+}
+
+#password {
+    top: 25px;
+}
+
+#dd {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 42px;
+    padding-left: 15px;
+    color: hsl(0, 100%, 74%);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+@media screen and (min-width:600px) {
+    body {
+        background-image: url(bg-intro-desktop.png);
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .one {
+        width: 50%;
+        max-width: 500px;
+        margin: 210 auto 0;
+        text-align: left;
+        padding-left: 150px;
+    }
+
+    .two {
+        width: 50%;
+        margin: 90px auto 0;
+        padding-right: 50px;
+    }
+
+    h1 {
+        font-size: 3.2em;
+    }
+
+    .firstbut {
+        height: 60px;
+        margin: 2%;
+    }
+}

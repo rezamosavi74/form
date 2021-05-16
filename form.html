@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <title>form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body >
+    <div class="container">
+        <div class="one">
+            <h1>Learn to code by <br>
+                watching others
+            </h1>
+            <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+        </div>
+        <div class="two">
+            <button class="firstbut"><strong>Try it free 7 days</strong> then <br>$20/mo. thereafter</button>
+            <form action="#" id="form" name="Form">
+                <fieldset>
+
+                   <div class="inpcont">
+                    <input type="text" placeholder="First Name" class="firstinp" id="ff"><br>
+                    <img class="error" id="firstname" src="icon-error.svg" alt="">
+                    <small class="explain" id="fn">First Name cannot be empty</small>
+                   </div>
+
+                    <div class="inpcont">
+                        <input type="text" placeholder="Last Name" id="ll"><br>
+                        <img class="error" id="lastname" src="icon-error.svg" alt="">
+                        <small class="explain" id="ls">Last Name cannot be empty</small>
+                    </div>
+
+                    <div class="inpcont">
+                        <input type="text" placeholder="Email Address" id="ee"><br>
+                        <img class="error" id="email" src="icon-error.svg" alt="">
+                        <small class="explain" id="el">Looks like this is not an email</small>
+                        <small id="dd">email@example/com</small>
+                    </div>
+
+                    <div class="inpcont">
+                        <input type="password" placeholder="Password" id="pp"><br>
+                        <img class="error" id="password" src="icon-error.svg" alt="">
+                        <small class="explain" id="pass">Password cannot be empty</small>
+                    </div>
+
+                    <button onclick="show()" class="secondbut">Claim your free trial</button><br>
+                    <small>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></small>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    
+    <script>
+        function show() {
+
+            let firstname = document.getElementById('ff');
+            let fimage = document.getElementById('firstname');
+            let fsmall = document.getElementById('fn');
+            if(firstname.value == '') {
+                firstname.style.borderColor = 'hsl(0, 100%, 74%)';
+                fimage.style.display = 'block';
+                fsmall.style.display = 'block';
+            } else {
+                firstname.style.borderColor = 'gray';
+                fimage.style.display = 'none';
+                fsmall.style.display = 'none';
+            }
+
+            let lastname = document.getElementById('ll');
+            let limage = document.getElementById('lastname');
+            let lsmall = document.getElementById('ls');
+            if(lastname.value == '') {
+                lastname.style.borderColor = 'hsl(0, 100%, 74%)';
+                limage.style.display = 'block';
+                lsmall.style.display = 'block';
+            } else {
+                lastname.style.borderColor = 'gray';
+                limage.style.display = 'none';
+                lsmall.style.display = 'none';
+            }
+
+            let mailadd = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            let emaill = document.getElementById('ee');
+            let eimage = document.getElementById('email');
+            let esmall = document.getElementById('el');
+            let eesmall = document.getElementById('dd');
+            if(emaill.value.match(mailadd)) {
+                emaill.style.borderColor = 'gray';
+                eimage.style.display = 'none';
+                esmall.style.display = 'none';
+                eesmall.style.display = 'none';
+            } else {
+                emaill.style.borderColor = 'hsl(0, 100%, 74%)';
+                eimage.style.display = 'block';
+                esmall.style.display = 'block';
+                eesmall.style.display = 'block';
+            }
+
+            let passinp = document.getElementById('pp');
+            let pimage = document.getElementById('password');
+            let psmall = document.getElementById('pass');
+            if(passinp.value == '') {
+                passinp.style.borderColor = 'hsl(0, 100%, 74%)';
+                pimage.style.display = 'block';
+                psmall.style.display = 'block';
+            } else {
+                passinp.style.borderColor = 'gray';
+                pimage.style.display = 'none';
+                psmall.style.display = 'none';
+            }
+
+            $('input').attr('placeholder','');
+
+           if(firstname.value !== '' && lastname.value !== '' && passinp.value !== '' && emaill.value.match(mailadd)){
+               document.getElementById('form').reset();
+           }
+            
+            $('#ee').mouseenter(function(){
+                $('#dd').css('display', 'none')
+            })
+            
+        }
+    </script>
+    
+</body>
+</html>
+
